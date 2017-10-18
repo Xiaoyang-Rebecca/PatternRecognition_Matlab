@@ -1,0 +1,32 @@
+function [X_Train_Proj,X_Test_Proj] =KLDA_proj_test(X_Train, Y_Train, X_Test, Dim)
+X_Train
+% clear all;
+% clc;
+% close all;
+%%Parameters:
+% options = 'Kernel';
+% options.Kernel = 1;
+options.KernelType = 'Gaussian';
+Sigma = 1;
+
+%%data:
+data = rand(100,10); %number of dimension 10
+label = [ones(25,1);ones(25,1)*2;ones(25,1)*3;ones(25,1)*4]; %number of sample 100,class 4
+Gram=zeros(size(data));
+%Kernel Matirx:
+for i=1:size(data,1)
+    for j=1:size(data,1)
+        Gram(i,j)=exp(-norm(data(i,:)-data(j,:))/2*(Sigma)^2);
+    end
+end
+%KLCA:
+options.t = 1;
+[eigvector, eigvalue] = KDA(options,label,data);
+for i=1:size(data,1)
+    for j=1:size(eigvector,2)
+        Y(i,j) = Gram(i,:)*eigvector(:,j);
+    end
+end
+
+%Y = data*eigvector;
+

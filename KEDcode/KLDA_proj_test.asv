@@ -1,0 +1,45 @@
+function [X_Train_LDAProj,X_Test_LDAProj] = KLDA_proj_test(X_Train, Y_Train, X_Test, Dim);
+% clear all;
+% clc;
+% close all;
+%%Parameters:
+% options = 'Kernel';
+% options.Kernel = 1;
+options.KernelType = 'Gaussian';
+Sigma = 1;
+
+data=X_Train;
+label=Y_Train;
+
+
+
+%Kernel Matirx:
+Gram=zeros(size(data));
+for i=1:size(data,1)
+    for j=1:size(data,1)
+        Gram(i,j)=exp(-norm(data(i,:)-data(j,:))/2*(Sigma)^2);
+    end
+end
+%KLCA:
+options.t = 1;
+[eigvector, eigvalue] = KDA(options,label,data);
+
+ [~,ind_SortedEigVal] = sort(eigvalue,'descend');  %get the largest 1~dim dimension of 
+
+for i=1:size(data,1)
+    for j=1:size(eigvector,2)
+        Y(i,j) = Gram(i,:)*eigvector(:,j);
+    end
+end
+data_Proj=Y;
+X_Train_LDAProj=Y;
+%Y = data*eigvector;
+%data_Proj=data*trans_matrix    : B=A*x
+%trans_matrix=data\data_Proj    : x=A\B
+
+trans_matrix= data\data_Proj;
+
+% data_Proj_t= data*trans_matrix;
+X_Test_LDAProj=X_Test*trans_matrix;
+
+
