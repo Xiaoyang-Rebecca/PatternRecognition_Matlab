@@ -9,7 +9,7 @@ Feature reduction projections and classifier models are learned by training data
 ## Conclusion
 
 
-<p align="center"><img src="../figures/fselection.png"  width="600" class="inline"/></p>
+<p align="center"><img src="./figures/fselection.png"  width="600" class="inline"/></p>
 
 Our experiments showed that SVM was the most robust method to increase dimensional space, and that SVM and LDA were the most sensitive to noise.
 
