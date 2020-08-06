@@ -15,11 +15,10 @@ Our experiments showed that SVM was the most robust method to increase dimension
 
 ## Documentations
 
-[Project Definition](.Project.pdf)
+
 
 [Preprint report](https://www.researchgate.net/publication/308927930_Comparison_of_Feature_Reduction_Approaches_and_Classification_Approaches_for_Pattern_Recognition)
 
-[Brief Introduction](https://xiaoyang-rebecca.github.io/subpage/fselec.html)
 
 
 
@@ -28,3 +27,7 @@ Our experiments showed that SVM was the most robust method to increase dimension
 Input data : [data](./data.mat)
 
 Main function : [mainFCT.m](./mainFCT.m)
+
+
+## About author
+[Porfolios](https://xiaoyang-rebecca.github.io)
