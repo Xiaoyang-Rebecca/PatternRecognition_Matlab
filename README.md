@@ -20,7 +20,12 @@ Our experiments showed that SVM was the most robust method to increase dimension
 [Preprint report](https://www.researchgate.net/publication/308927930_Comparison_of_Feature_Reduction_Approaches_and_Classification_Approaches_for_Pattern_Recognition)
 
 
-
+@article{li2016comparison,
+  title={Comparison of Feature Reduction Approaches and Classification Approaches for Pattern Recognition},
+  author={Li, Xiaoyang},
+  journal={Available at SSRN 3659735},
+  year={2016}
+}
 
 ## Code Run Instruction
 
